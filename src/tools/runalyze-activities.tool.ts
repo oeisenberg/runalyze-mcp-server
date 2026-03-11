@@ -5,6 +5,12 @@ import { BaseRunalyzeTool } from './base-runalyze.tool';
 
 const getActivitiesSchema = z.object({
   page: z.number().int().min(1).default(1).describe('The collection page number (default: 1)'),
+  itemsPerPage: z
+    .number()
+    .int()
+    .min(1)
+    .default(1)
+    .describe('The number of items per page number (default: 1)'),
 });
 
 interface Sport {
@@ -215,8 +221,8 @@ export class RunalyzeActivitiesTool extends BaseRunalyzeTool {
     await context.reportProgress({ progress: 0, total: 100 });
 
     try {
-      const { page } = params;
-      const endpoint = `/api/v1/activity?page=${page}`;
+      const { page, itemsPerPage } = params;
+      const endpoint = `/api/v1/activity?page=${page}&itemsPerPage=${itemsPerPage}`;
 
       await context.reportProgress({ progress: 25, total: 100 });
 

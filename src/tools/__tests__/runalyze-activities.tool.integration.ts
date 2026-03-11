@@ -200,6 +200,7 @@ describe('RunalyzeActivitiesTool', () => {
       const result = await tool.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -371,6 +372,7 @@ describe('RunalyzeActivitiesTool', () => {
       await tool.getActivities(
         {
           page: 3,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -390,6 +392,7 @@ describe('RunalyzeActivitiesTool', () => {
       const result = await tool.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -411,6 +414,7 @@ describe('RunalyzeActivitiesTool', () => {
       const result = await tool.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -431,6 +435,7 @@ describe('RunalyzeActivitiesTool', () => {
       const result = await tool.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -448,6 +453,7 @@ describe('RunalyzeActivitiesTool', () => {
       const result = await tool.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -474,6 +480,7 @@ describe('RunalyzeActivitiesTool', () => {
       const result = await tool.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -636,6 +643,7 @@ describe('RunalyzeActivitiesTool', () => {
       await tool.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -685,6 +693,7 @@ describe('RunalyzeActivitiesTool', () => {
       const result = await toolNoToken.getActivities(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
