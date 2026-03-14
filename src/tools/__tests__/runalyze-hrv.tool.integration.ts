@@ -73,6 +73,7 @@ describe('RunalyzeHrvTool', () => {
       const result = await tool.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -82,13 +83,16 @@ describe('RunalyzeHrvTool', () => {
       expect(parsed.data).toEqual(mockData);
       expect(parsed.page).toBe(1);
       expect(parsed.totalItems).toBe(2);
-      expect(mockFetch).toHaveBeenCalledWith('https://runalyze.com/api/v1/metrics/hrv?page=1', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          token: 'test-token',
+      expect(mockFetch).toHaveBeenCalledWith(
+        'https://runalyze.com/api/v1/metrics/hrv?page=1&itemsPerPage=1',
+        {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+            token: 'test-token',
+          },
         },
-      });
+      );
       expect(mockContext.reportProgress).toHaveBeenCalledTimes(4);
     });
 
@@ -111,12 +115,13 @@ describe('RunalyzeHrvTool', () => {
       await tool.getHrvData(
         {
           page: 3,
+          itemsPerPage: 1,
         },
         mockContext,
       );
 
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://runalyze.com/api/v1/metrics/hrv?page=3',
+        'https://runalyze.com/api/v1/metrics/hrv?page=3&itemsPerPage=1',
         expect.any(Object),
       );
     });
@@ -130,6 +135,7 @@ describe('RunalyzeHrvTool', () => {
       const result = await tool.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -151,6 +157,7 @@ describe('RunalyzeHrvTool', () => {
       const result = await tool.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -171,6 +178,7 @@ describe('RunalyzeHrvTool', () => {
       const result = await tool.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -188,6 +196,7 @@ describe('RunalyzeHrvTool', () => {
       const result = await tool.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -214,6 +223,7 @@ describe('RunalyzeHrvTool', () => {
       const result = await tool.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -243,6 +253,7 @@ describe('RunalyzeHrvTool', () => {
       await tool.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -292,6 +303,7 @@ describe('RunalyzeHrvTool', () => {
       const result = await toolNoToken.getHrvData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );

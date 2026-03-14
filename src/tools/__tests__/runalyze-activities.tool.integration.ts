@@ -210,13 +210,16 @@ describe('RunalyzeActivitiesTool', () => {
       expect(parsed.data).toEqual(mockData);
       expect(parsed.page).toBe(1);
       expect(parsed.totalItems).toBe(1);
-      expect(mockFetch).toHaveBeenCalledWith('https://runalyze.com/api/v1/activity?page=1', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          token: 'test-token',
+      expect(mockFetch).toHaveBeenCalledWith(
+        'https://runalyze.com/api/v1/activity?page=1&itemsPerPage=1',
+        {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+            token: 'test-token',
+          },
         },
-      });
+      );
       expect(mockContext.reportProgress).toHaveBeenCalledTimes(4);
     });
 
@@ -378,7 +381,7 @@ describe('RunalyzeActivitiesTool', () => {
       );
 
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://runalyze.com/api/v1/activity?page=3',
+        'https://runalyze.com/api/v1/activity?page=3&itemsPerPage=1',
         expect.any(Object),
       );
     });

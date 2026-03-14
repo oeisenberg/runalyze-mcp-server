@@ -73,6 +73,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       const result = await tool.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -83,7 +84,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       expect(parsed.page).toBe(1);
       expect(parsed.totalItems).toBe(2);
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://runalyze.com/api/v1/metrics/heartRateRest?page=1',
+        'https://runalyze.com/api/v1/metrics/heartRateRest?page=1&itemsPerPage=1',
         {
           method: 'GET',
           headers: {
@@ -114,12 +115,13 @@ describe('RunalyzeHeartRateRestTool', () => {
       await tool.getHeartRateRestData(
         {
           page: 3,
+          itemsPerPage: 1,
         },
         mockContext,
       );
 
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://runalyze.com/api/v1/metrics/heartRateRest?page=3',
+        'https://runalyze.com/api/v1/metrics/heartRateRest?page=3&itemsPerPage=1',
         expect.any(Object),
       );
     });
@@ -133,6 +135,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       const result = await tool.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -154,6 +157,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       const result = await tool.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -174,6 +178,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       const result = await tool.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -191,6 +196,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       const result = await tool.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -217,6 +223,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       const result = await tool.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -246,6 +253,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       await tool.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
@@ -295,6 +303,7 @@ describe('RunalyzeHeartRateRestTool', () => {
       const result = await toolNoToken.getHeartRateRestData(
         {
           page: 1,
+          itemsPerPage: 1,
         },
         mockContext,
       );
