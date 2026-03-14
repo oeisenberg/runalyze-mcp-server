@@ -6,6 +6,7 @@ import { RunalyzeSleepTool } from './tools/runalyze-sleep.tool';
 import { RunalyzeHeartRateRestTool } from './tools/runalyze-heart-rate-rest.tool';
 import { RunalyzeActivitiesTool } from './tools/runalyze-activities.tool';
 import { RunalyzeActivityDetailTool } from './tools/runalyze-activity-detail.tool';
+import { RunalyzeStatisticsTool } from './tools/runalyze-statistics.tool';
 import configuration from './config/configuration';
 
 @Module({
@@ -29,6 +30,7 @@ import configuration from './config/configuration';
     RunalyzeHeartRateRestTool,
     RunalyzeActivitiesTool,
     RunalyzeActivityDetailTool,
+    RunalyzeStatisticsTool,
   ],
 })
 export class AppModule {}
