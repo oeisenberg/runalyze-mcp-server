@@ -5,6 +5,12 @@ import { BaseRunalyzeTool } from './base-runalyze.tool';
 
 const getSleepDataSchema = z.object({
   page: z.number().int().min(1).default(1).describe('The collection page number (default: 1)'),
+  itemsPerPage: z
+    .number()
+    .int()
+    .min(1)
+    .default(1)
+    .describe('Number of items per page (default: 1)'),
 });
 
 interface SleepDataItem {
@@ -36,8 +42,8 @@ export class RunalyzeSleepTool extends BaseRunalyzeTool {
     await context.reportProgress({ progress: 0, total: 100 });
 
     try {
-      const { page } = params;
-      const endpoint = `/api/v1/metrics/sleep?page=${page}`;
+      const { page, itemsPerPage } = params;
+      const endpoint = `/api/v1/metrics/sleep?page=${page}&itemsPerPage=${itemsPerPage}`;
 
       await context.reportProgress({ progress: 25, total: 100 });
 
