@@ -7,6 +7,7 @@ import { RunalyzeSleepTool } from './tools/runalyze-sleep.tool';
 import { RunalyzeHeartRateRestTool } from './tools/runalyze-heart-rate-rest.tool';
 import { RunalyzeActivitiesTool } from './tools/runalyze-activities.tool';
 import { RunalyzeActivityDetailTool } from './tools/runalyze-activity-detail.tool';
+import { RunalyzeBodyCompositionTool } from './tools/runalyze-bodyComposition.tool';
 import { BearerAuthGuard } from './auth/bearer-auth.guard';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { HealthController } from './health/health.controller';
@@ -38,6 +39,7 @@ import configuration from './config/configuration';
     RunalyzeHeartRateRestTool,
     RunalyzeActivitiesTool,
     RunalyzeActivityDetailTool,
+    RunalyzeBodyCompositionTool,
     // Authentication
     {
       provide: APP_GUARD,
